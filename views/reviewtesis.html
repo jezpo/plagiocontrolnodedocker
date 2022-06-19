@@ -1,0 +1,30 @@
+<link rel="stylesheet" href="/stylesheets/style.css">
+<div class="alert alert-primary" role="alert">
+    <p>
+        Suba el documento pdf del trabajo que desea revisar,
+        el sistema verifica similaridad de los documentos contenidos en la base de datos,
+        ya depende del tutor tomar decisiones sobre dicho trabajo.
+        
+    </p>
+  </div>
+
+<form action="" method="post">
+    <div class="upload-drop-zone" id="drop-zone">
+        <div id="defaultmsn">
+          Arrastra el pdf de la tesis que quiere revisar
+        </div>
+        <ul class="filesicon">
+          
+        </ul>
+    </div>
+    <button type="submit" id="sendbtn" class="btn btn-primary">Enviar</button>
+</form>
+<script type="module">
+  import { UploadUi } from  "/js/uploadui.js";
+  //var socket = io();
+  var p = new UploadUi("/server/uploadreview", SOCKETDATA, ROOMDATA, (data) => {
+    
+    $("#maincontent").html(data);
+  });
+  
+</script>
